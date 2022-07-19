@@ -15,43 +15,41 @@
   weight = -108
 [[main]]
   parent = "Links"
-  name = "LinkedIn"
-  url = "https://www.linkedin.com/"
+  name = "Github"
+  url = "https://github.com/creeperjong"
 [[main]]
   parent = "Links"
-  name = "Twitter"
-  url = "https://twitter.com/"
+  name = "Linkedin"
+  url = "https://www.linkedin.com/in/creeperjong"
 
 [[main]]
   name = "About"
-  url = "about/"
+  url = "about"
   weight = -107
 
 # social menu links
 
 [[social]]
-  name = "github"
-  type = "social"
+  name = "facebook"
   weight = 1
-  url = "https://github.com/#"
+  url = "https://facebook.com/Corgi_Creeperjong"
 [[social]]
-  name = "twitter"
+  name = "github"
   weight = 2
-  url = "https://twitter.com/#"
+  url = "https://github.com/creeperjong"
 [[social]]
   name = "linkedin"
   weight = 3
-  url = "https://www.linkedin.com/in/#"
+  url = "https://www.linkedin.com/in/creeperjong"
 [[social]]
-  name = "rss"
+  name = "instagram"
   weight = 4
-  url = "index.xml"
+  url = "https://instagram.com/corgi_creeperjong"
+# test
 
 # other supported social links
 # name = "youtube"
 # url = "https://www.youtube.com/#"
-# name = "facebook"
-# url = "https://facebook.com/#"
 # name = "instagram"
 # url = "https://instagram.com/#"
 # name = "stackoverflow"
