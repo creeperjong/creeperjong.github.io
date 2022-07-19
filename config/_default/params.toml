@@ -108,8 +108,8 @@ iconsDir = "icons/" # without a leading forward slash
 
 # website author
 [author]
-name = "Creeperjong"
-# photo = "images/jane-doe.png" #include this if you would like to show the author photo on the sidebar
+name = "CorgiCreeperjong"
+photo = "images/sitting_shark_in_HSNU_square.jpg" #include this if you would like to show the author photo on the sidebar
 
 [plausible_analytics]
 enable = false # to enable plausible analytics set to true.
