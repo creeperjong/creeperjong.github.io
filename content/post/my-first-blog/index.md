@@ -2,7 +2,7 @@
 title: '第一篇文！關於架設Blog的碰壁全過程'
 summary: '這個Blog的第一篇文:) 關於這個Blog的由來及心路歷程'
 date: '2023-01-08'
-draft: true
+draft: false
 slug: 'first-post'
 aliases:
   - my-first-post
