@@ -170,7 +170,7 @@ jobs:
 baseurl = "/"  # Include trailing slash
 ```
 
-然後我再看一下我`config/_default/config.toml`
+然後我再看一下我的`config/_default/config.toml`
 
 ```toml
 baseurl = "blog.corgicreeperjong.tk"
@@ -184,3 +184,114 @@ baseurl = "blog.corgicreeperjong.tk"
 加上暑假一到就跑去補習班當輔導老師（嗯對，我那年暑假沒找到實習），所以根本忘了這回事。
 
 直到最近，這件事又重回到我的To-do list裡面，至於到發出這篇文前又發生了什麼，我們下面繼續連載。
+
+### 重新連載
+
+最近學校放寒假了，16周雖然有點累，但放假後真的很爽。我這段期間找了份實習，主要是寫C#，
+也就是因為這份實習剛開始真的學到太多東西了，迫不及待把這些知識記下來。於是，我就來繼續來弄這個東東了。
+
+當然啦，半年前的config沒有設定完全，還是踩了一些坑。
+
+先來講一下**時區**的問題，Hugo對於文章日期的處理還算是好用。每篇文章的最上面會有一區用`---`或`+++`框住的參數區，
+這裡稱為`page variables`，顧名思義，就是針對每篇文章的configuration，包括`title`、`description`等等。
+
+{{% notice tip "關於Page variable的格式" %}}
+
+若使用`---`，請用以下格式
+
+```toml
+[variable_name]: [value]
+```
+
+若使用`+++`，請用以下格式
+
+```toml
+[variable_name] = [value]
+```
+
+{{% /notice %}}
+
+其中，`date`可以指定發文日期，格式為`YYYY-MM-DD`，值得注意的是，Hugo只會顯示當前日期以前的文章，
+也就是說，你可以設定一篇文章的發文日期在未來的某一天，就可以達成排程發文的功能，雖然我暫時想不到什麼時候會用到就是了。
+
+發文日期到此還沒結束，當你設定好後很開心地輸入`hugo server`，想看自己文章的排版如何，結果卻還是一片黑或一片白，啥都沒有。
+
+這個時候十之八九就是時區的問題了，Hugo預設的時區都是`UTC+0`，所以假設我在台北時間2023-01-01 01:00設定了`date: 2023-01-01`，
+但其實Hugo認定目前的時間是`UTC+0`，也就是2022-12-31 17:00，時間還沒到，自然無法顯示文章。
+
+解決的方法也很簡單，在`config.toml`中加入這行
+
+```
+timeZone = "Asia/Taipei"
+```
+
+就可以把時區調到臺北，行為就會合理了。
+
+還有一點比較瑣碎。主頁面上方原本有個Archive的標籤，現在暫時被我取消了。原先在exampleSite看到的時候，
+以為是跟別人Blog上的Archive一樣，可以封存自己不想放在主頁的文章（之類的）。
+
+直到後來經過一番摸索，看到了他的config
+
+```toml
+[[main]]
+  name = "Archives" # 標籤名稱
+  url = "post/rich-content/" # 轉向url
+  weight = -109 # 標籤位置，自行摸索
+```
+
+...只是一個捷徑而已。
+
+但也算是好用？之後或許可以試試看讓`url`導向到主頁以外的文章列表，就可以達成真正Archive的效果了。
+
+> 這裡順便統整一下幾個常用的page variables
+> 
+> `author`: 作者
+> 
+> `title`: 文章標題
+>
+> `summary`: 文章列表中呈現的文章敘述
+>
+> `date`: 發布日期
+> 
+> `draft`: 是否為草稿
+>
+> `slug`: 自訂url
+>
+> `usePageBundles`: 使用Bundle管理文章（詳見[這裡](https://gohugo.io/content-management/page-bundles/)）
+> 
+> `thumbnail`: 文章縮圖
+> 
+> `categories`, `tags`, `series`: 分類用的標籤
+> 
+> `featured`: 是否為精選文章（可設定置頂或放於側欄）
+
+### 未來展望
+
+其實在寫這篇的同時，我也發現了很多還不知道怎麼設定的feature，或是不滿意的地方
+
+* 閱讀時間不準確
+* i18n設置
+* markdown樣式不如預期
+* 前面提到的Archive功能
+* 不知道可不可以開留言功能？
+
+這篇裡面因為主要給自己記錄用，所以也忽略了很多沒踩坑的細節，config的設置尤其多...
+主要是希望自己以後還是能養成看文件的習慣啦，就忽略了很多文件有寫的東西。
+
+如果真的有人吃飽沒事幹看到這邊，也希望可以不吝給一下意見，包括文章內容或Blog設置等等的。
+
+最後放一下兩位幫助我架站的好同學的架站文和Blog，大家如果真的要技術一點的文章可以去這邊看。
+
+{{% notice info "優秀資源分享" %}}
+
+快速建立Hugo Blog
+
+[Hugo-01：建立一個Hugo Blog](https://blog.smallten.me/p/hugo-01/)
+
+幫我找baseUrl Bug的子權（Subarya）的部落格
+
+[Subarya](https://kutsunasubarya.github.io/)
+
+{{% /notice %}}
+
+下一篇高機率發C#，也有可能繼續改Blog，希望不要半途而廢。
