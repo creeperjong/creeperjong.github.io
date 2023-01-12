@@ -255,7 +255,11 @@ timeZone = "Asia/Taipei"
 > 
 > `draft`: 是否為草稿
 >
+> `toc`: 是否在開頭加上目錄（Table of contents）
+>
 > `slug`: 自訂url
+>
+> `aliases`: url別名（會重新導向至預設或自訂url）
 >
 > `usePageBundles`: 使用Bundle管理文章（詳見[這裡](https://gohugo.io/content-management/page-bundles/)）
 > 
