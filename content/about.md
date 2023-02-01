@@ -10,17 +10,22 @@ author = "柯基汪汪"
 
 本名李聖澄，目前就讀國立師範大學資工系大三。
 
-這裡是我分享日常、紀錄所學的地方，由於大部分文章不是教學性質，
-所以可能會有解釋不清的地方，還請見諒～
+這裡是我分享日常、紀錄所學的地方，
+
+由於大部分文章主要不是教學性質，所以可能會有解釋不清的地方，還請見諒～
+
+歡迎蒞臨指教
 
 ## Contact me
 
-Email:     leogood50203@gmail.com
+Email:&emsp;leogood50203@gmail.com
 
-Facebook:  [請點我](https://www.facebook.com/CorgiCreeperjong/)
+Facebook:&emsp;[請點我](https://www.facebook.com/CorgiCreeperjong/)
 
-Instagram: [請點我](https://www.instagram.com/corgi_creeperjong/)
+Instagram:&emsp;[請點我](https://www.instagram.com/corgi_creeperjong/)
 
-Linkedin:  [請點我](https://www.linkedin.com/in/corgicreeperjong/)
+Linkedin:&emsp;[請點我](https://www.linkedin.com/in/corgicreeperjong/)
 
-Github:    [請點我（半廢棄狀態）](https://github.com/creeperjong)
+Github:&emsp;[請點我（半廢棄狀態）](https://github.com/creeperjong)
+
+Medium:&emsp;[請點我（部分文章同步更新）](https://medium.com/@corgi-creeperjong)
