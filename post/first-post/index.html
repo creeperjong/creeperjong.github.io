@@ -46,7 +46,8 @@
 </span></span></span><span class=line><span class=ln>31</span><span class=cl><span class=w>          </span><span class=nt>publish_dir</span><span class=p>:</span><span class=w> </span><span class=l>./public</span><span class=w>
 </span></span></span><span class=line><span class=ln>32</span><span class=cl><span class=w>          </span><span class=nt>cname</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;blog.corgicreeperjong.tk&#39;</span><span class=w>
 </span></span></span></code></pre></div><p>最後一行的cname是自定義網域的部分，如果沒有就不需要填。自定義網域的方式是先找一個免費的Domain name（你有錢也可以買一個），
-再用Cloudflare去設定代理github.io，結果就會如你現在所看到的，不是github的域名，但是確確實實的host在github上。</p><p>我這裡也打算略過詳細的做法，這篇主要是要記錄自己踩坑的紀錄，就沒打算寫太細了。
+再用Cloudflare去設定代理github.io，結果就會如你現在所看到的，不是github的域名，但是確確實實的host在github上。</p><blockquote><p>2023/2/10 更新</p><p>昨天公司RD sharing講到Cloudflare，我說我只拿來做redirect，
+被罵殺雞用牛刀了QQ我找機會會來好好研究的</p></blockquote><p>我這裡也打算略過詳細的做法，這篇主要是要記錄自己踩坑的紀錄，就沒打算寫太細了。
 （其實還有一部份原因是忘記了，這些東西都是半年前找同學求助弄好的，早就忘光了）</p><p>接著，在Settings > Pages裡，設定Source為Deploy from a branch，
 底下的Branch設定為<code>gh-pages</code>，如果你有自訂網域，記得要填在Custom Domain裡。
 最後，把最下面的Enforce HTTPS打開，除非你的網域不支援HTTPS。</p><p>以上都設定好後，就可以Push上去看看成果了。</p><h3 id=碰上大岩壁>碰上大岩壁</h3><p>由於本身沒什麼架網站的經驗，所以真的是東牆補西牆，然後四處求救，真的要好好檢討一下。</p><p>也是因為這樣，我一個設定沒寫好，就找了一個月，下面請聽我娓娓道來。</p><p>當我完成上面的部署後，很開心的在瀏覽器輸入<a href=https://blog.corgicreeperjong.tk/>blog.corgicreeperjong.tk</a>，想看看成果。
