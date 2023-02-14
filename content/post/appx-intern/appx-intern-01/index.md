@@ -18,6 +18,8 @@ tags:
 ---
 
 > 此文同步發表於[Medium](https://corgi-creeperjong.medium.com/)
+>
+> 因為Medium那邊是以公司名義發的文，所以比較官腔一些
 
 嗨囉大家好！我是柯基。目前是資工系大三的學生，並在APPX時賦科技擔任非常菜的後端實習生。
 
