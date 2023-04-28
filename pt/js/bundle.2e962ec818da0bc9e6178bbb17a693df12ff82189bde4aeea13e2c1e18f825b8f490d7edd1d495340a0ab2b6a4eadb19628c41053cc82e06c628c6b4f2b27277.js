@@ -6,9 +6,11 @@ const featuredImageClass = 'image_featured';
 const imageScalableClass = 'image-scalable';
 const scaleImageClass = 'image-scale';
 const pageHasLoaded = 'DOMContentLoaded';
-const imageAltClass = 'img_alt'
+const imageAltClass = 'img_alt';
 
-const rootURL = window.location.protocol + "//" + window.location.host;
+
+const defaultSiteLanguage = 'en';
+const baseURL = '/';
 const searchFieldClass = '.search_field';
 const searchClass = '.search';
 const goBackClass = 'button_back';
@@ -26,7 +28,6 @@ const noMatchesFound = 'Nenhum resultado encontrado';
 const doc = document.documentElement;
 const inline = ":inline";
 // variables read from your hugo configuration
-const parentURL = window.location.protocol + "//" + window.location.host + "/";
 let showImagePosition = "false";
 
 const showImagePositionLabel = 'Figure';
@@ -207,6 +208,19 @@ function parseBoolean(string) {
   }
 };
 
+function forEach(node, callback) {
+  node ? Array.prototype.forEach.call(node.childNodes, callback) : false;
+}
+
+function findQuery(query = 'query') {
+  const urlParams = new URLSearchParams(window.location.search);
+  if(urlParams.has(query)){
+    let c = urlParams.get(query);
+    return c;
+  }
+  return "";
+}
+
 function wrapText(text, context, wrapper = 'mark') {
   let open = `<${wrapper}>`;
   let close = `</${wrapper}>`;
@@ -294,6 +308,7 @@ function goBack(target) {
     pushClass(bodyElement, 'windows');
   }
 })();
+
 ;
 const codeActionButtons = [
   {
@@ -436,7 +451,7 @@ function actionPanel() {
     btn.className = `icon panel_icon panel_${button.id}`;
     button.show ? false : pushClass(btn, panelHide);
     // load icon inside button
-    btn.style.backgroundImage = `url(${parentURL}${iconsPath}${button.icon}.svg)`;
+    btn.style.backgroundImage = `url(${baseURL}${iconsPath}${button.icon}.svg)`;
     // append button on panel
     panel.appendChild(btn);
   });
@@ -460,7 +475,7 @@ function toggleLineWrap(elem) {
 }
 
 function copyCode(codeElement) {
-  lineNumbers = elems(lineClass, codeElement);
+  lineNumbers = elems('.ln', codeElement);
   // remove line numbers before copying
   if(lineNumbers.length) {
     lineNumbers.forEach(function(line){
@@ -649,7 +664,7 @@ function fileClosure(){
       Array.from(links).forEach(function(link){
         let target, rel, blank, noopener, attr1, attr2, url, isExternal;
         url = elemAttribute(link, 'href');
-        isExternal = (url && typeof url == 'string' && url.startsWith('http')) && !url.startsWith(parentURL) ? true : false;
+        isExternal = (url && typeof url == 'string' && url.startsWith('http')) && !url.startsWith(baseURL) ? true : false;
         if(isExternal) {
           target = 'target';
           rel = 'rel';
@@ -681,7 +696,6 @@ function fileClosure(){
   headingNodes.forEach(function(node){
     link = createEl('a');
     link.className = 'link icon';
-    link.style.backgroundImage = `url(${parentURL}${iconsPath}link.svg)`;
     id = node.getAttribute('id');
     if(id) {
       link.href = `${current}#${id}`;
@@ -877,6 +891,9 @@ function fileClosure(){
         // Insert caption
         image.insertAdjacentHTML('afterend', desc.outerHTML);
       }
+
+      // Persist modified alt to image element
+      image.alt = alt
     });
 
     hljs.initHighlightingOnLoad();
