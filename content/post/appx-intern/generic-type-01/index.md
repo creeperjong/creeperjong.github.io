@@ -6,7 +6,7 @@ draft: false
 slug: 'generic-type-01'
 author: '柯基汪汪'
 usePageBundles: true
-featureImage: '泛型上.png'
+featureImage: '泛型上.jpg'
 toc: true
 
 series:
