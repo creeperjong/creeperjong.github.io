@@ -7,6 +7,7 @@ slug: 'generic-type-01'
 author: '柯基汪汪'
 usePageBundles: true
 featureImage: '泛型上.png'
+toc: true
 
 series:
   - APPX Intern
@@ -18,7 +19,8 @@ tags:
   - Generic type
 ---
 
-> 此文同步發表於[Medium](https://corgi-creeperjong.medium.com/)
+> 此文同步發表於[Medium](https://medium.com/appxtech/appx%E6%99%82%E8%B3%A6%E7%A7%91%E6%8A%80-%E5%AF%A6%E7%BF%92%E9%81%8A%E8%A8%98-%E2%85%B0-c-net%E4%B8%AD%E7%9A%84%E6%B3%9B%E5%9E%8B%E5%8F%8A%E5%85%B6%E7%9B%B8%E9%97%9C%E6%87%89%E7%94%A8-%E4%B8%8A-b1050505b524)
+
 
 最近在時賦科技的後端實習中，漸漸開始接觸到實際的專案了。與此同時，為了降低日後的維護成本，Coding不再只是以當下需求為目的，要做的更是預想未來可能發生異動的地方，並且思考現在如何架構程式，才能讓整個系統的可維護性更高。
 
